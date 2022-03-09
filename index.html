@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Discover Oregon</title>
 
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="./assets/css/materialize.min.css"  media="screen,projection"/>
@@ -13,18 +14,37 @@
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
+<header>
+    <div class="Welcome">Welcome to Oregon</div>
+</header>
 
 <body>
-    <div class="row">
-        <div class="welcome col s12 center-align">Welcome to Oregon</div>
-        <div class="weather col s4 center-align">Weather</div>
-        <div class="tripCheck col s4 center-align">Trip Check</div>
-        <div class="ski col s4 center-align">Ski Report</div>
-        <div class="tide col s4 center-align">Tide Report</div>
-        <div class="footer col s12 center-align">Reset Page</div>
+    <!-- need to import photos into assets folder for background -->
+    <!-- place path after style in () -->
+    <div class="bgimg" id="bgimg" style="background-image: ();"></div>
+    <!-- transparent containers -->
+    <div class="container">
+        <div class="main">
+            <div class="row">
+                <div class="col-md-12">
+        
+        <div class="weather">10 Day Weather Forcast</div>
+            <button id="Choose city" class="city-btn btn">Choose a City</button>
+        <div class="tripCheck col s4 center-align">Live look Cameras</div>
+        <div class="ski col s4 center-align">Oregon Ski Report</div>
+        <div class="tide col s4 center-align">Oregon Coast Tide Report</div>
+                </div>
+            </div>
+        </div>
     </div>
     
     <!--JavaScript at end of body for optimized loading-->
     <script type="text/javascript" src="./assets/js/materialize.min.js"></script>
 </body>
+    <!-- reset button at bottom of page -->
+<footer>
+    <div class="footer">
+            <button id="reset" class="reset-btn btn">Reset Page</button>
+        </div>
+</footer>
 </html>
