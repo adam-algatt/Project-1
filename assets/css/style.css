@@ -1,1 +1,40 @@
+<<<<<<< HEAD
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
+=======
+.welcome {
+    height: 160px;
+    border: solid 2px black;
+    background-color: lightskyblue;
+}
+
+.weather {
+    height: 520px;
+    border: solid 2px black;
+    background-color: lightgrey
+}
+
+.tripCheck {
+    height: 520px;
+    border: solid 2px black;
+    background-color: plum;
+}
+
+.ski {
+    height: 260px;
+    border: solid 2px black;
+    background-color: lightslategray;
+}
+
+.tide {
+    height: 260px;
+    border: solid 2px black;
+    background-color: lightgreen;
+}
+
+
+.reset {
+    height: 130px;
+    border: solid 2px black;
+    background-color: lightsteelblue;
+}
+>>>>>>> 69513879c9e32a63c444aa5234b81c7423a6f185
