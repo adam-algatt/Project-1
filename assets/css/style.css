@@ -1,6 +1,4 @@
-<<<<<<< HEAD
-@import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
-=======
+
 .welcome {
     height: 160px;
     border: solid 2px black;
@@ -37,4 +35,4 @@
     border: solid 2px black;
     background-color: lightsteelblue;
 }
->>>>>>> 69513879c9e32a63c444aa5234b81c7423a6f185
+
