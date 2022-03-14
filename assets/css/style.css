@@ -1,29 +1,57 @@
 .welcome {
-    height: 160px;
+    height: 320px;
     border: solid 2px black;
     background-color: lightskyblue;
+    background-image: url("../images/Mt_Hood.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: black;
+    font-size: XX-large;
 }
 
+
+.form-label {
+    color: black;
+    font-size: x-large;
+    text-align: left;
+}
+
+
 .weather {
-    height: 520px;
+    height: 660px;
     border: solid 2px black;
     background-color: lightgrey
 }
 
-.tripCheck {
-    height: 520px;
+.breweries {
+    height: 660px;
     border: solid 2px black;
-    background-color: plum;
+    background-color: lightslategray;
+}
+
+.form-input {
+    border: solid 2px black;
+    background-color: white;
+}
+
+.list-group {
+    list-style-type: none;
+    text-align: left;
+    display: block;
+}
+
+.list-group span {
+    display: block;
 }
 
 .ski {
-    height: 260px;
+    height: 330px;
     border: solid 2px black;
     background-color: lightslategray;
 }
 
 .tide {
-    height: 260px;
+    height: 330px;
     border: solid 2px black;
     background-color: lightgreen;
 }
