@@ -1,6 +1,7 @@
 var cityFormEl = document.querySelector("#city-form");
 var cityInputEl = document.querySelector("#city");
 var breweriesContainerEl = document.querySelector("#breweries-container");
+var breweriesButtonEl = document.querySelector("#breweryButton");
 M.AutoInit();
 var el = document.querySelector('.collapsible');
 var instance = M.Collapsible.init(el, {});
@@ -22,7 +23,7 @@ var formSubmitHandler = function(event) {
 }
 
 var getBreweries = function(city) {
-    var apiUrl = "https://api.openbrewerydb.org/breweries?by_city=" + city + "&per_page=8";
+    var apiUrl = "https://api.openbrewerydb.org/breweries?by_city=" + city + "&per_page=25";
 
     // make request to url
     fetch(apiUrl)
@@ -62,14 +63,16 @@ var displayBreweries = function(city) {
         breweryUlEl.classList = "collapsible collapsible-accordion active";
 
             // create list item 
-            var breweryLiEl = document.createElement("li");
+            var breweryLiEl = document.createElement("ul");
             breweryLiEl.classList = "";
         
         
                 //create div for each collapsible header for each brewery
-                var breweryNameEl = document.createElement("div");
+                var breweryNameEl = document.createElement("button");
                 breweryNameEl.textContent = breweryName;
-                breweryNameEl.classList = "collapsible-header active";
+                breweryNameEl.classList = "btn modal-trigger col s12";
+                breweryNameEl.setAttribute("id", "breweryButton");
+                breweryNameEl.setAttribute("data-target", "breweryFormModal")
 
                     //create collapsible div to hold brewery url
                     var breweryUrlEl = document.createElement("div");
@@ -94,10 +97,24 @@ var displayBreweries = function(city) {
     }
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.modal');
+    var instances = M.Modal.init(elems);
+  });
+
+
+
+// // modal was triggered
+// $("breweryFormModal").on("show.bs.modal", function() {
+//     // clear values
+//     $("#modalBreweryUrl").val("");
+// });
+
+// // modal is displayed
+// $("breweryFormModal").on("shown.bs.modal", function() {
+//     $("modalBreweryUrl").trigger("focus");
+// });
+
+
 cityFormEl.addEventListener("submit", formSubmitHandler);
 
-document.addEventListener('DOMContentLoaded', function() {
-    // var el = document.querySelectorAll('.collapsible');
-    // var instance = M.Collapsible.init(el, {
-    //     accordion: true});
-    });
