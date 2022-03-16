@@ -1,7 +1,9 @@
 // //var URL = "https://api.openweathermap.org/data/2.5/weather?lat=" + latitude + "&lon=" + longitude + "&appid=a22e1d322f701f954bc18b4b1b6801cc"
 
 
+
 var forecastArr = [];
+
 
 // //array containing latitude and longitude for cities covered by app
 // //lat and long vals are currently filler info **MAKE SURE TO CHANGE** before MVP
@@ -60,6 +62,7 @@ var forecastArr = [];
 //once city selection is added to the dropdown menu the url below will be added in between the fetch function '()' 
 //var url = "https://weatherbit-v1-mashape.p.rapidapi.com/forecast/3hourly?lat=" + latitude + "&lon=" + Longitude + "&units=I&days=5";
 
+<<<<<<< HEAD
 //variables used in injectHtml()
 var weatherEl = document.getElementsByClassName('weather');
 
@@ -89,6 +92,7 @@ weatherDiv.appendChild(weatherUl);
 
 function forecast(data) {
   console.log(data);
+
   // console.log(data.data[0].temp);
   // console.log(data.data[0].temp);
 for (i=0; i < data.data.length; i++){
@@ -108,13 +112,34 @@ let forecastObj = {};
    //injectHtml(forecastArr);
   console.log(forecastArr);
   return forecastArr;
+
+  console.log('temperature:', data.data[0].temp);
+  console.log('description:', data.data[0].weather.description);
+  // console.log(data.data[0].temp);
+  // console.log(data.data[0].temp);
+
+  let temp = data.data[0].temp;
+
+  let relativeHumidity = data.data[0].temp + '%';
+  let description = data.data[0].weather.description;
+  Object.assign(forecastObj, {
+    'description': description,
+    'temperature': temp,
+   'relative-humidity': relativeHumidity
+  });
+   console.log(forecastObj);
+   //injectHtml(forecastObj);
+  return forecastObj;
+
 };
 
 // //API fetch gets weather data and calls forecast function to format data 
 // //Eventually this will be a concatinated string that selects a latitude/longitude based on city selection by user
 
 
+
 fetch("https://weatherbit-v1-mashape.p.rapidapi.com/forecast/daily?lat=35.5&lon=-78.5&units=I&days=10", {
+
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-host": "weatherbit-v1-mashape.p.rapidapi.com",

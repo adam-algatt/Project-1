@@ -4,50 +4,108 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Discover Oregon</title>
+    <title>Document</title>
 
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="./assets/css/materialize.min.css"  media="screen,projection"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
     <link rel="stylesheet" href="./assets/css/style.css"/>
     
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
-<header>
-    <div class="Welcome">Welcome to Oregon</div>
-</header>
 
 <body>
-    <!-- need to import photos into assets folder for background -->
-    <!-- place path after style in () -->
-    <div class="bgimg" id="bgimg" style="background-image: ();"></div>
-    <!-- transparent containers -->
-    <div class="container">
-        <div class="main">
-            <div class="row">
-                <div class="col-md-12">
-        
-        <div class="weather">
+    <div class="row">
+        <div class="welcome col s12 center-align">
+            <h1>Welcome to Oregon</h1>
+            <label class="form-label col s12 offset-s1" for="city">Select City</label>
+                <form id="city-form" class="card-body col s3">
+                    <div class="select-wrapper white">
+                            <select name="city" class="select col s2" id="city">
+                                <option class="option" value="Ashland">Ashland</option>
+                                <option class="option" value="Astoria">Astoria</option>
+                                <option class="option" value="Beaverton">Beaverton</option>
+                                <option class="option" value="Bend">Bend</option>
+                                <option class="option" value="Brookings">Brookings</option>  
+                                <option class="option" value="Burns">Burns</option>
+                                <option class="option" value="Cannon Beach">Cannon Beach</option>
+                                <option class="option" value="Coos Bay">Coos Bay</option>
+                                <option class="option" value="Corvallis">Corvallis</option>
+                                <option class="option" value="Eugene">Eugene</option>
+                                <option class="option" value="Florence">Florence</option>
+                                <option class="option" value="Forest Grove">Forest Grove</option>
+                                <option class="option" value="Grants Pass">Grants Pass</option>
+                                <option class="option" value="Grehsam">Gresham</option>
+                                <option class="option" valyue="Hillsobro">Hillsboro</option>
+                                <option class="option" value="Hood River">Hood River</option>
+                                <option class="option" value="John Day">John Day</option>
+                                <option class="option" value="Klamath Falls">Klamath Falls</option>
+                                <option class="option" value="Lincoln City">Lincoln City</option>
+                                <option class="option" value="Medford">Medford</option>
+                                <option class="option" value="McMinnville">McMinnville</option>
+                                <option class="option" value="Newberg">Newberg</option>
+                                <option class="option" value="Newport">Newport</option>
+                                <option class="option" value="Pendleton">Pendleton</option>
+                                <option class="option" value="Portland">Portland</option>
+                                <option class="option" value="Roseburg">Roseburg</option>
+                                <option class="option" value="Salem">Salem</option>
+                                <option class="option" value="Seaside">Seaside</option>
+                                <option class="option" value="Sisters">Sisters</option>
+                                <option class="options" value="The Dalles">The Dalles</option>
+                                <option class="option" value="Tigard">Tigard</option>
+                                <option class="option" value="Tillamook">Tillamook</option>
+                                <option class="option" value="Tualatin">Tualatin</option>
+                            </select>
+                        <button type="submit" class="btn col s2 offset-s10">Go</button> 
+                    </div>   
+            </form>
+        </div> 
+        <div class="weather col s4 center-align"></div>
 <h4 class="flow-text center-align">10 Day Weather Forecast</h4>
+<div class="row">
+    <div class="col-2">kd</div>
+    <div class="col-2">kd</div>
+    <div class="col-s-2">kd</div>
+    <div class="col-s-2">kd</div>
+    <div class="col-s-2">kd</div>
+</div>
 
+<div class="breweries col s4 center-align">
+    <h5>Local Brews</h5>
+    <div id="breweries-container" class="list-group"></div>
+</div> 
+<div class="ski col s4 center-align">Ski Report</div>
+<div class="tide col s4 center-align">Tide Report</div>
+<div class="footer col s12 center-align">Reset Page</div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="breweryFormModal">
+<!--<div class="modal-dialog modal-dialog-centered" role="document"> -->
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="task-form-modal">Brewery: >
+                <span class="breweryUrl"></span>
+            </h5>
+            <!--m<button type="button" class="close" data-dismiss="modal" aria-label="Close"></button> -->
         </div>
-            <button id="Choose city" class="city-btn btn">Choose a City</button>
-        <div class="tripCheck col s4 center-align">Live look Cameras</div>
-        <div class="ski col s4 center-align">Oregon Ski Report</div>
-        <div class="tide col s4 center-align">Oregon Coast Tide Report</div>
-                </div>
-            </div>
+
+        <div class="modal-body"></div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary modal-close" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save Brewery</button>
         </div>
     </div>
-    
-    <!--JavaScript at end of body for optimized loading-->
-    <script type="text/javascript" src="./assets/js/materialize.min.js"></script>
-    <script src="./assets/js/weather.js"></script>
+</div>
+</div>
+
+<!--JavaScript at end of body for optimized loading-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script type="text/javascript" src="./assets/js/materialize.min.js"></script>
+<script type="text/javascript" src="./assets/js/materialize.js"></script>  
+<script type="text/javascript" src="./assets/js/script.js"></script>
+<script type="text/javascript" src="./assets/js/weather.js"></script>
+
 </body>
-    <!-- reset button at bottom of page -->
-<footer>
-    <div class="footer">
-            <button id="reset" class="reset-btn btn">Reset Page</button>
-        </div>
-</footer>
 </html>
