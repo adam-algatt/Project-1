@@ -1,5 +1,6 @@
-// //var URL = "https://api.openweathermap.org/data/2.5/weather?lat=" + latitude + "&lon=" + longitude + "&appid=a22e1d322f701f954bc18b4b1b6801cc"
 
+var cityFormEl = document.querySelector("#city-form");
+var cityInputEl = document.querySelector("#city");
 
 
 var forecastArr = [];
@@ -104,18 +105,35 @@ function forecast(data) {
 
 };
 
-// //API fetch gets weather data and calls forecast function to format data 
-// //Eventually this will be a concatinated string that selects a latitude/longitude based on city selection by user
+
+ 
+  var getWeather = function(city) {
+
+  // get value from input element
+  let citySelect = cityInputEl.value.trim();
+  citySelect = toString(citySelect);
+  let coord = coordinates.citySelect; 
+  console.log(coord);
+  console.log(citySelect);
+  debugger;
+  var url = "https://weatherbit-v1-mashape.p.rapidapi.com/forecast/daily" + coord + "&units=imperial&lang=en";
 
 
-
-fetch("https://weatherbit-v1-mashape.p.rapidapi.com/forecast/daily?lat=35.5&lon=-78.5&units=I&days=10", {
-
+  fetch(url, {
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-host": "weatherbit-v1-mashape.p.rapidapi.com",
-		"x-rapidapi-key": "ee1b44b791msh8215eb3c769e560p1621afjsnd130e673bf11"
+		"x-rapidapi-key": "7e9e619138msh8dc4909ebddbce5p1e15ebjsnb45a522d5f6e"
 	}
 })
-.then(response => response.json())
-   .then(data => forecast(data));
+.then(response => {
+	console.log(response);
+})
+.catch(err => {
+	console.error(err);
+});
+
+};
+
+ cityFormEl.addEventListener("submit", getWeather(this.city));
+

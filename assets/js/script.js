@@ -13,7 +13,6 @@ var formSubmitHandler = function(event) {
 
     // get value from input element
     var city = cityInputEl.value.trim();
-
     if (city) {
         getBreweries(city);
 
