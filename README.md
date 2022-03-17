@@ -9,9 +9,15 @@ DESCRIPTION:
 -----------------------------------
 INSTALLATION
 
-  github repository link :
+  github repository link :https://adam-algatt.github.io/Project-1/
   
   website deployment link :
+  
+  
+  
+  <img width="1401" alt="Screen Shot 2022-03-17 at 10 11 00 PM" src="https://user-images.githubusercontent.com/87955167/158896096-2300453a-7986-494d-9e27-35917aefded5.png">
+
+  
   
 -----------------------------------
 TECHNOLOGIES USED IN CREATION OF THIS APPLICATION
