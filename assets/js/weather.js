@@ -4,6 +4,42 @@
 
 var forecastArr = [];
 
+//Object for accessing lat & lon based on city selection. Will access based on city selection value in dropdown
+var coordinates = {
+  "Ashland": "?lat=42.1&lon=-122.4",
+  "Astoria": "?lat=46.1&lon=-123.5",
+  "Beaverton": "?lat=45.3&lon=-122.5",
+  "Bend": "?lat=44.2&lon=-121.2",
+  "Brookings": "?lat=42.3&lon=-124.2",
+  "Burns": "?lat=43.5&lon=-119.3",
+  "Cannon Beach": "?lat=45.5&lon=-123.6",
+  "Coos Bay": "?lat=43.2&lon=-124.1",
+  "Corvallis": "?lat=44.3&lon=-123.2",
+  "Eugene": "?lat=44.4&lon=-123.6",
+  "Florence": "?lat=43.6&lon=-124.6",
+  "Forest Grove": "?lat=45.3&lon=-123.6",
+  "Grants Pass": "?lat=42.3&lon=-123.2",
+  "Grehsam": "?lat=45.3&lon=-122.3",
+  "Hillsobro": "?lat=45.3&lon=-122.6",
+  "Hood River": "?lat=45.4&lon=-121.3",
+  "John Day": "?lat=44.3&lon=-118.6",
+  "Klamath Falls": "?lat=42.1&lon=-121.5",
+  "Lincoln City": "?lat=44.6&lon=-124.1",
+  "Medford": "?lat=42.2&lon=-122.5",
+  "McMinnville": "?lat=45.1&lon=-123.1",
+  "Newberg": "?lat=45.2&lon=-122.6",
+  "Newport": "?lat=44.4&lon=-124.3",
+  "Pendleton": "?lat=45.4&lon=-118.5",
+  "Portland": "?lat=45.3&lon=-122.4",
+  "Roseburg": "?lat=43.1&lon=-123.2",
+  "Salem": "?lat=44.6&lon=-123.1",
+  "Seaside": "?lat=45.6&lon=-123.6",
+  "Sisters": "?lat=44.2&lon=-121.3",
+  "The Dalles": "?lat=45.4&lon=-121.6",
+  "Tigard": "?lat=45.3&lon=-122.5",
+  "Tillamook": "?lat=45.3&lon=-123.5",
+  "Tualatin": "?lat=45.2&lon=-122.5"
+};
 
 // //array containing latitude and longitude for cities covered by app
 // //lat and long vals are currently filler info **MAKE SURE TO CHANGE** before MVP
@@ -62,7 +98,7 @@ var forecastArr = [];
 //once city selection is added to the dropdown menu the url below will be added in between the fetch function '()' 
 //var url = "https://weatherbit-v1-mashape.p.rapidapi.com/forecast/3hourly?lat=" + latitude + "&lon=" + Longitude + "&units=I&days=5";
 
-<<<<<<< HEAD
+
 //variables used in injectHtml()
 var weatherEl = document.getElementsByClassName('weather');
 

@@ -1,30 +1,84 @@
-
 .welcome {
-    height: 160px;
+    height: 320px;
     border: solid 2px black;
     background-color: lightskyblue;
+    background-image: url("../images/Mt_Hood.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: black;
+    font-size: XX-large;
 }
 
-.weather {
-    height: 520px;
-    border: solid 2px black;
-    background-color: lightgrey
+
+.form-label {
+    color: black;
+    font-size: x-large;
+    text-align: left;
 }
 
-.tripCheck {
-    height: 520px;
+/*Weather styling start*/
+#weather {
+    height: 660px;
     border: solid 2px black;
-    background-color: plum;
+    background-color: lightgrey;
+ display: flex;
+ flex-wrap: wrap;
+}
+
+#forecast-div {
+    padding-top: 0;
+    height: 450px;
+    border: 2px solid black;
+margin: 0 30px 0 20px;
+border-radius: 25px;
+}
+
+#forecast-div span {
+    margin-top: 15px;
+  font-size: x-large;
+  word-wrap: normal;
+}
+
+#forecast-title  {
+    margin-top: 10px;
+}
+
+#forecast-details > * {
+    font-size: large;
+    
+}
+
+/*Weather styling end*/
+
+.breweries {
+    height: 660px;
+    border: solid 2px black;
+    background-color: lightslategray;
+}
+
+.form-input {
+    border: solid 2px black;
+    background-color: white;
+}
+
+.list-group {
+    list-style-type: none;
+    text-align: left;
+    display: block;
+}
+
+.list-group span {
+    display: block;
 }
 
 .ski {
-    height: 260px;
+    height: 330px;
     border: solid 2px black;
     background-color: lightslategray;
 }
 
 .tide {
-    height: 260px;
+    height: 330px;
     border: solid 2px black;
     background-color: lightgreen;
 }
@@ -35,4 +89,3 @@
     border: solid 2px black;
     background-color: lightsteelblue;
 }
-
