@@ -2,12 +2,11 @@ var cityFormEl = document.querySelector("#city-form");
 var cityInputEl = document.querySelector("#city");
 var breweriesContainerEl = document.querySelector("#breweries-container");
 var breweriesButtonEl = document.querySelector("#breweryButton");
+var modalTitleEl = document.querySelector("#modal-title");
+var breweryInfoContainerEl = document.querySelector("#brewery-info-container");
 M.AutoInit();
-var el = document.querySelector('.collapsible');
-var instance = M.Collapsible.init(el, {});
 
-
-
+// set city variable from form submit
 var formSubmitHandler = function(event) {
     event.preventDefault();
 
@@ -23,7 +22,7 @@ var formSubmitHandler = function(event) {
 }
 
 var getBreweries = function(city) {
-    var apiUrl = "https://api.openbrewerydb.org/breweries?by_city=" + city + "&per_page=25";
+    var apiUrl = "https://api.openbrewerydb.org/breweries?by_state=oregon&by_city=" + city + "&per_page=15";
 
     // make request to url
     fetch(apiUrl)
@@ -32,6 +31,7 @@ var getBreweries = function(city) {
          if (response.ok) {
              response.json().then(function(data) {
                  displayBreweries(data);
+                 console.log(data);
             });
          } else {
              alert("Error: " + response.statusText)
@@ -55,8 +55,9 @@ var displayBreweries = function(city) {
 
     // loop over breweries
     for (var i = 0; i < city.length; i++) {
-        var breweryName = city[i].name + " - " + city[i].street;
-        var breweryUrl = city[i].website_url;
+        var breweryName = city[i].name
+        ;
+        
 
         // create unordered list
         var breweryUlEl =document.createElement("ul");
@@ -73,20 +74,8 @@ var displayBreweries = function(city) {
                 breweryNameEl.classList = "btn modal-trigger col s12";
                 breweryNameEl.setAttribute("id", "breweryButton");
                 breweryNameEl.setAttribute("data-target", "breweryFormModal")
-
-                    //create collapsible div to hold brewery url
-                    var breweryUrlEl = document.createElement("div");
-                    breweryUrlEl.classList = "collapsible-body active";
-
-                        // create span item for each URL
-                        var breweryUrlText = document.createElement("span");
-                        breweryUrlText.textContent = breweryUrl;
-
-        //append span to div
-        breweryUrlEl.appendChild(breweryUrlText);
-
-        // append to div to list item
-        breweryNameEl.appendChild(breweryUrlEl);
+                $(breweryNameEl).addClass("breweryModal");
+                breweryNameEl.setAttribute("id", city[i].id);
 
         //append  to the DOM
         breweryLiEl.appendChild(breweryNameEl);
@@ -95,26 +84,70 @@ var displayBreweries = function(city) {
 
         breweriesContainerEl.appendChild(breweryUlEl);
     }
+    $(".breweryModal").click(breweryClick);
 }
 
+// initialize modal using materializ.js
 document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.modal');
     var instances = M.Modal.init(elems);
-  });
+});
 
+// fetch api to get individual brewery data and input into modal
+function breweryClick(brewery) {
+    var breweryId = $(this).attr("id")
+    console.log(breweryId)
+    var apiUrl = "https://api.openbrewerydb.org/breweries/" + breweryId
+    fetch(apiUrl)
+        .then(function(response) {
+        // request was successful
+         if (response.ok) {
+            response.json().then(function(data) {
+                displayBreweryInfo(data, brewery)
+            });
+         } else {
+             alert("Error: " + response.statusText)
+         }
+     })
+     .catch(function(error) {
+         alert(error.text)
+    })
+}
 
+var displayBreweryInfo = function(id) {
 
-// // modal was triggered
-// $("breweryFormModal").on("show.bs.modal", function() {
-//     // clear values
-//     $("#modalBreweryUrl").val("");
-// });
+    // clear old content
+    modalTitleEl.textContent = "";
+    breweryInfoContainerEl.textContent = "";
 
-// // modal is displayed
-// $("breweryFormModal").on("shown.bs.modal", function() {
-//     $("modalBreweryUrl").trigger("focus");
-// });
+    // set variables for brewery information from api
+    var breweryName = document.createElement("span")
+    breweryName.textContent = "Brewery Name: " + id.name;
+    console.log(breweryName);
 
+    var breweryType = document.createElement("li")
+    breweryType.textContent = "Brewery Type: " + id.brewery_type;
+    console.log(breweryType);
+
+    var breweryStreet = document.createElement("li")
+    breweryStreet = "Street: " + id.street;
+    console.log(breweryStreet);
+
+    var breweryPhone = document.createElement("li")
+    breweryPhone.textContent = "Phone Number: " + id.phone;
+    console.log(breweryPhone);
+
+    var breweryUrl = document.createElement("li")
+    breweryUrl.textContent = "Website: " + id.website_url;
+    console.log(breweryUrl);
+
+    // append brewery information to modal
+    modalTitleEl.appendChild(breweryName);
+    breweryInfoContainerEl.appendChild(breweryType);
+    breweryInfoContainerEl.appendChild(breweryPhone);
+    breweryInfoContainerEl.appendChild(breweryUrl);
+    //breweryInfoContainerEl.appendChild(breweryStreet);
+ }
 
 cityFormEl.addEventListener("submit", formSubmitHandler);
 
