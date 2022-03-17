@@ -17,6 +17,7 @@
 }
 
 /*Weather styling start*/
+
 #weather {
     height: 660px;
     border: solid 2px black;
@@ -47,6 +48,12 @@ border-radius: 25px;
     font-size: large;
     
 }
+#forecast-div img {
+  width: 100%;
+  border-radius: 25px;
+  margin-top: 10px;
+}
+
 
 /*Weather styling end*/
 
