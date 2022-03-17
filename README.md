@@ -9,7 +9,7 @@ DESCRIPTION:
 -----------------------------------
 INSTALLATION
 
-  github repository link :
+  github repository link :https://adam-algatt.github.io/Project-1/
   
   website deployment link :
   
