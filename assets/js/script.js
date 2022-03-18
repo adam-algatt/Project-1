@@ -1,6 +1,7 @@
 var cityFormEl = document.querySelector("#city-form");
 var cityInputEl = document.querySelector("#city");
 var breweriesContainerEl = document.querySelector("#breweries-container");
+var breweryFormModalEl = document.querySelector("#brewery-form-modal");
 var breweriesButtonEl = document.querySelector("#breweryButton");
 var modalTitleEl = document.querySelector("#modal-title");
 var breweryInfoContainerEl = document.querySelector("#brewery-info-container");
@@ -73,7 +74,7 @@ var displayBreweries = function(city) {
                 breweryNameEl.textContent = breweryName;
                 breweryNameEl.classList = "btn modal-trigger col s12";
                 breweryNameEl.setAttribute("id", "breweryButton");
-                breweryNameEl.setAttribute("data-target", "breweryFormModal")
+                breweryNameEl.setAttribute("data-target", "brewery-form-modal")
                 $(breweryNameEl).addClass("breweryModal");
                 breweryNameEl.setAttribute("id", city[i].id);
 
@@ -84,6 +85,7 @@ var displayBreweries = function(city) {
 
         breweriesContainerEl.appendChild(breweryUlEl);
     }
+    
     $(".breweryModal").click(breweryClick);
 }
 
@@ -121,9 +123,10 @@ var displayBreweryInfo = function(id) {
     breweryInfoContainerEl.textContent = "";
 
     // set variables for brewery information from api
-    var breweryName = document.createElement("span")
-    breweryName.textContent = "Brewery Name: " + id.name;
-    console.log(breweryName);
+    var breweryNameModal = document.createElement("span")
+    breweryNameModal.textContent = id.name;
+    breweryNameModal.setAttribute("id", "breweryNameModal");
+    console.log(breweryNameModal);
 
     var breweryType = document.createElement("li")
     breweryType.textContent = "Brewery Type: " + id.brewery_type;
@@ -142,12 +145,35 @@ var displayBreweryInfo = function(id) {
     console.log(breweryUrl);
 
     // append brewery information to modal
-    modalTitleEl.appendChild(breweryName);
+    modalTitleEl.appendChild(breweryNameModal);
     breweryInfoContainerEl.appendChild(breweryType);
     breweryInfoContainerEl.appendChild(breweryPhone);
     breweryInfoContainerEl.appendChild(breweryUrl);
     //breweryInfoContainerEl.appendChild(breweryStreet);
- }
+}
 
+
+
+// save button in modal was clicked
+$("#brewery-form-modal .btn-primary").click(function() {
+    // get values from modal
+        var breweryNameSaved = document.getElementById("breweryNameModal").innerHTML;
+        localStorage.setItem("savedBrewery", breweryNameSaved);
+        console.log(breweryNameSaved);
+
+    // if (breweryNameModal) {
+    // saveBrewery(breweryNameSaved, "SavedBreweries")
+
+    // // // close modal
+    // // $("#brewery-form-modal").modal("hide");
+
+    // saveBrewery(breweryNameSaved);
+    // }
+})
+    
 cityFormEl.addEventListener("submit", formSubmitHandler);
 
+// var saveBrewery = function() {
+//     localStorage.setItem("savedBreweries", JSON.stringify(saveBrewery));
+//     console.log(saveBrewery)
+// }
