@@ -160,20 +160,6 @@ $("#brewery-form-modal .btn-primary").click(function() {
         var breweryNameSaved = document.getElementById("breweryNameModal").innerHTML;
         localStorage.setItem("savedBrewery", breweryNameSaved);
         console.log(breweryNameSaved);
-
-    // if (breweryNameModal) {
-    // saveBrewery(breweryNameSaved, "SavedBreweries")
-
-    // // // close modal
-    // // $("#brewery-form-modal").modal("hide");
-
-    // saveBrewery(breweryNameSaved);
-    // }
 })
     
 cityFormEl.addEventListener("submit", formSubmitHandler);
-
-// var saveBrewery = function() {
-//     localStorage.setItem("savedBreweries", JSON.stringify(saveBrewery));
-//     console.log(saveBrewery)
-// }
