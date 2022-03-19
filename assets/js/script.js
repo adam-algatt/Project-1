@@ -1,3 +1,5 @@
+var savedBreweries = {};
+
 var cityFormEl = document.querySelector("#city-form");
 var cityInputEl = document.querySelector("#city");
 var breweriesContainerEl = document.querySelector("#breweries-container");
@@ -5,7 +7,21 @@ var breweryFormModalEl = document.querySelector("#brewery-form-modal");
 var breweriesButtonEl = document.querySelector("#breweryButton");
 var modalTitleEl = document.querySelector("#modal-title");
 var breweryInfoContainerEl = document.querySelector("#brewery-info-container");
+var savedBreweriesButtonEl = document.querySelector("#saved-brewery-container");
 M.AutoInit();
+
+var loadBreweries = function() {
+    savedBreweries = JSON.parse(localStorage.getItem("savedBreweries"));
+    console.log(savedBreweries);
+
+    var savedBreweryBtn = document.createElement("button");
+    savedBreweryBtn.textContent = savedBreweries;
+    savedBreweryBtn.classList = "btn col s12";
+   
+    savedBreweriesButtonEl.appendChild(savedBreweryBtn);
+}
+
+loadBreweries();
 
 // set city variable from form submit
 var formSubmitHandler = function(event) {
@@ -69,7 +85,7 @@ var displayBreweries = function(city) {
             breweryLiEl.classList = "";
         
         
-                //create div for each collapsible header for each brewery
+                //create a button for each brewery
                 var breweryNameEl = document.createElement("button");
                 breweryNameEl.textContent = breweryName;
                 breweryNameEl.classList = "btn modal-trigger col s12";
@@ -140,8 +156,9 @@ var displayBreweryInfo = function(id) {
     breweryPhone.textContent = "Phone Number: " + id.phone;
     console.log(breweryPhone);
 
-    var breweryUrl = document.createElement("li")
-    breweryUrl.textContent = "Website: " + id.website_url;
+    var breweryUrl = document.createElement("a")
+    breweryUrl.textContent = "Website:  " + id.website_url;
+    breweryUrl.setAttribute("href", id.website_url);
     console.log(breweryUrl);
 
     // append brewery information to modal
@@ -152,14 +169,18 @@ var displayBreweryInfo = function(id) {
     //breweryInfoContainerEl.appendChild(breweryStreet);
 }
 
-
-
 // save button in modal was clicked
 $("#brewery-form-modal .btn-primary").click(function() {
     // get values from modal
-        var breweryNameSaved = document.getElementById("breweryNameModal").innerHTML;
-        localStorage.setItem("savedBrewery", breweryNameSaved);
-        console.log(breweryNameSaved);
-})
+    var breweryNameSaved = document.getElementById("breweryNameModal").innerHTML;
+        localStorage.setItem("savedBreweries", JSON.stringify(breweryNameSaved));
     
+
+    var savedBreweryBtn = document.createElement("button");
+       savedBreweryBtn.textContent = breweryNameSaved;
+       savedBreweryBtn.classList = "btn col s12";
+       savedBreweriesButtonEl.appendChild(savedBreweryBtn);
+});
+
+
 cityFormEl.addEventListener("submit", formSubmitHandler);
