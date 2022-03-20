@@ -4,31 +4,31 @@
 // var forecastArr = [];
 
 // //Object for accessing lat & lon based on city selection. Will access based on city selection value in dropdown
-var coordinates = {
-    Ashland: "?lat=42.1&lon=-122.4",
-    Astoria: "?lat=46.1&lon=-123.5",
-    Beaverton: "?lat=45.3&lon=-122.5",
-    Bend: "?lat=44.2&lon=-121.2",
-    Brookings: "?lat=42.3&lon=-124.2",
-    Burns: "?lat=43.5&lon=-119.3",
-    CannonBeach: "?lat=45.5&lon=-123.6",
-    CoosBay: "?lat=43.2&lon=-124.1",
-    Corvallis: "?lat=44.3&lon=-123.2",
-    Eugene: "?lat=44.4&lon=-123.6",
-    Florence: "?lat=43.6&lon=-124.6",
-    ForestGrove: "?lat=45.3&lon=-123.6",
-    GrantsPass: "?lat=42.3&lon=-123.2",
-    Grehsam: "?lat=45.3&lon=-122.3",
-    Hillsobro: "?lat=45.3&lon=-122.6",
-    HoodRiver: "?lat=45.4&lon=-121.3",
-    JohnDay: "?lat=44.3&lon=-118.6",
-    KlamathFalls: "?lat=42.1&lon=-121.5",
-    LincolnCity: "?lat=44.6&lon=-124.1",
-    Medford: "?lat=42.2&lon=-122.5",
-    McMinnville: "?lat=45.1&lon=-123.1",
-    Newberg: "?lat=45.2&lon=-122.6",
-    Newport: "?lat=44.4&lon=-124.3",
-    Pendleton: "?lat=45.4&lon=-118.5",
+var cityCoordinates = {
+    Ashland: "?lat=42.2&lon=-122.7",
+    Astoria: "?lat=46.2&lon=-123.8",
+    Beaverton: "?lat=45.5&lon=-122.8",
+    Bend: "?lat=44.1&lon=-121.3",
+    Brookings: "?lat=42.1&lon=-124.3",
+    Burns: "?lat=43.6&lon=-119.1",
+    CannonBeach: "?lat=45.9&lon=-124.0",
+    CoosBay: "?lat=43.4&lon=-124.2",
+    Corvallis: "?lat=44.6&lon=-123.3",
+    Eugene: "?lat=44.1&lon=-123.1",
+    Florence: "?lat=44.0&lon=-124.1",
+    ForestGrove: "?lat=45.5&lon=-123.1",
+    GrantsPass: "?lat=42.4&lon=-123.3",
+    Gresham: "?lat=45.5&lon=-122.4",
+    Hillsboro: "?lat=45.5&lon=-123.0",
+    HoodRiver: "?lat=45.7&lon=-121.5",
+    JohnDay: "?lat=44.4&lon=-119.0",
+    KlamathFalls: "?lat=42.2&lon=-121.8",
+    LincolnCity: "?lat=45.0&lon=-124.0",
+    Medford: "?lat=42.3&lon=-122.9",
+    McMinnville: "?lat=45.2&lon=-123.2",
+    Newberg: "?lat=45.3&lon=-123.0",
+    Newport: "?lat=44.6&lon=-124.1",
+    Pendleton: "?lat=45.7&lon=-118.8",
     Portland: "?lat=45.3&lon=-122.4",
     Roseburg: "?lat=43.1&lon=-123.2",
     Salem: "?lat=44.6&lon=-123.1",
@@ -43,7 +43,7 @@ var coordinates = {
 
 
 // //once city selection is added to the dropdown menu the url below will be added in between the fetch function '()' 
-var url = "https://weatherbit-v1-mashape.p.rapidapi.com/forecast/daily" + coordinates + "&units=I&days=5";
+// var url = "https://weatherbit-v1-mashape.p.rapidapi.com/forecast/daily" + coordinates + "&units=I&days=5";
 
 
 // //variables used in injectHtml()
@@ -109,7 +109,7 @@ var url = "https://weatherbit-v1-mashape.p.rapidapi.com/forecast/daily" + coordi
 
 
 
-// fetch("https://weatherbit-v1-mashape.p.rapidapi.com/forecast/daily?lat=35.5&lon=-78.5&units=I&days=5", {
+// fetch("url", {
 
 // 	"method": "GET",
 // 	"headers": {
@@ -124,25 +124,43 @@ var url = "https://weatherbit-v1-mashape.p.rapidapi.com/forecast/daily" + coordi
 /**/
 
 
-// const divs = document.querySelectorAll('.cities');
 
-// divs.forEach(el => el.addEventListener('click', event => {
-//   console.log('hey');
-// }));
+
 
 
 //Use below to call function with city val and loop through coord obj for matching val
 $('#submit').on("click", function() {
   console.log('clicked');
+
   const city = $("#city").val();
+  //removes space in city so cityCoord obj can be queried 
   let parsed = city.split(" ").join('');
-  console.log(parsed);
-  console.log(coordinates[parsed]);
+
+
+//jqery api call
+const settings = {
+	"async": true,
+	"crossDomain": true,
+	"url": "https://weatherbit-v1-mashape.p.rapidapi.com/forecast/daily" + cityCoordinates[parsed] + "&units=imperial",
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "weatherbit-v1-mashape.p.rapidapi.com",
+		"x-rapidapi-key": "7e9e619138msh8dc4909ebddbce5p1e15ebjsnb45a522d5f6e"
+	}
+};
+
+$.ajax(settings).done(function (response) {
+	console.log(response);
 });
 
 
 
-//or you can add an event listener to cities class and 
-//send city value to click function for submit button
+
+//click func close
+});
+
+
+
   
 
+// .then(response => response.json())
