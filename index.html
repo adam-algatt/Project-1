@@ -11,8 +11,8 @@
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="./assets/css/materialize.min.css"  media="screen,projection"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
-
     <link rel="stylesheet" href="./assets/css/style.css"/>
+
     
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -56,7 +56,7 @@
                                 <option class="option" value="Salem">Salem</option>
                                 <option class="option" value="Seaside">Seaside</option>
                                 <option class="option" value="Sisters">Sisters</option>
-                                <option class="options" value="The Dalles">The Dalles</option>
+                                <option class="option" value="The Dalles">The Dalles</option>
                                 <option class="option" value="Tigard">Tigard</option>
                                 <option class="option" value="Tillamook">Tillamook</option>
                                 <option class="option" value="Tualatin">Tualatin</option>
@@ -155,12 +155,15 @@
             <div id="breweries-container" class="list-group"></div>
         </div> 
         <div class="ski col s4 center-align">Ski Report</div>
-        <div class="tide col s4 center-align">Tide Report</div>
+        <div class="tide col s4 center-align">
+            <h5>Saved Breweries</h5>
+                <div class="col s12 center-align" id="saved-brewery-container"></div>
+        </div>
         <div class="footer col s12 center-align">Reset Page</div>
     </div>
     
-    <!-- Modal -->
-    <div class="modal fade" id="breweryFormModal">
+    <!-- Local Brews Modal -->
+    <div class="modal fade" id="brewery-form-modal">
         <!--<div class="modal-dialog modal-dialog-centered" role="document"> -->
             <div class="modal-content">
                 <div class="modal-header">
@@ -178,11 +181,31 @@
         </div>
     </div>
 
+    <!-- Saved Brews Modal -->
+    <div class="modal fade" id="saved-brewery-form-modal">
+        <!--<div class="modal-dialog modal-dialog-centered" role="document"> -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal-title"></h5>
+                        <ul id="saved-brewery-info-container"></ul>
+                    <!--m<button type="button" class="close" data-dismiss="modal" aria-label="Close"></button> -->
+                </div>
+
+                <div class="modal-body"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary modal-close" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
       <footer>
     <div class="footer">
             <button id="reset" class="reset-btn btn">Reset Page</button>
         </div>
 </footer>
+
 
     <!--JavaScript at end of body for optimized loading-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
