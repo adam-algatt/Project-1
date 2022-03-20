@@ -5,15 +5,51 @@
 }
 
 .weather {
-    height: 520px;
+    max-height: 660px;
     border: solid 2px black;
-    background-color: lightgrey
+    background-color: lightskyblue;
+    background-image: url("../images/Mt_Hood.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: black;
+    font-size: XX-large;
 }
+
+
+.form-label {
+    color: black;
+    font-size: x-large;
+    text-align: left;
+}
+
 
 .tripCheck {
     height: 520px;
     border: solid 2px black;
     background-color: plum;
+}
+
+.ski {
+    height: 260px;
+.breweries {
+    height: 660px;
+    border: solid 2px black;
+    background-color: lightslategray;
+}
+
+.form-input {
+    border: solid 2px black;
+    background-color: white;
+}
+
+.list-group {
+    list-style-type: none;
+    text-align: left;
+    display: block;
+}
+
+.list-group span {
+    display: block;
 }
 
 .ski {
