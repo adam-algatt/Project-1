@@ -1,5 +1,11 @@
 .welcome {
-    height: 320px;
+    height: 160px;
+    border: solid 2px black;
+    background-color: lightskyblue;
+}
+
+.weather {
+    max-height: 660px;
     border: solid 2px black;
     background-color: lightskyblue;
     background-image: url("../images/Mt_Hood.jpg");
@@ -17,12 +23,14 @@
 }
 
 
-.weather {
-    height: 660px;
+.tripCheck {
+    height: 520px;
     border: solid 2px black;
-    background-color: lightgrey
+    background-color: plum;
 }
 
+.ski {
+    height: 260px;
 .breweries {
     height: 660px;
     border: solid 2px black;
@@ -45,13 +53,13 @@
 }
 
 .ski {
-    height: 330px;
+    height: 260px;
     border: solid 2px black;
     background-color: lightslategray;
 }
 
 .tide {
-    height: 330px;
+    height: 260px;
     border: solid 2px black;
     background-color: lightgreen;
 }
