@@ -8,6 +8,7 @@ var breweriesButtonEl = document.querySelector("#breweryButton");
 var modalTitleEl = document.querySelector("#modal-title");
 var breweryInfoContainerEl = document.querySelector("#brewery-info-container");
 var savedBreweriesButtonEl = document.querySelector("#saved-brewery-container");
+var btnClear = document.querySelector("#clear-saved-brewery");
 M.AutoInit();
 
 // creaqte function to load previously saved breweries from local storage 
@@ -21,9 +22,9 @@ var loadBreweries = function() {
             var savedBreweryBtn = document.createElement("button");
             savedBreweryBtn.textContent = JSON.parse(value);
             savedBreweryBtn.classList = "btn col s12";
-        
+
             savedBreweriesButtonEl.appendChild(savedBreweryBtn);    
-        }
+        } 
     }
 }
 
@@ -44,7 +45,7 @@ var formSubmitHandler = function(event) {
 
 // function to fetch breweries via api
 var getBreweries = function(city) {
-    var apiUrl = "https://api.openbrewerydb.org/breweries?by_state=oregon&by_city=" + city + "&per_page=15";
+    var apiUrl = "https://api.openbrewerydb.org/breweries?by_state=oregon&by_city=" + city + "&per_page=8";
 
     // make request to url
     fetch(apiUrl)
@@ -175,11 +176,12 @@ $("#brewery-form-modal .btn-primary").click(function() {
         savedBreweryBtn.classList = "btn col s12";
         savedBreweriesButtonEl.appendChild(savedBreweryBtn);
 
+        $('.modal').modal('close');
     // call save brewery function from click event
     saveBrewery(newBrewery)
 });
 
-// fucntion to save brewery in saved brewery
+// function to save brewery in saved brewery
 var saveBrewery = (newBrewery) => {
     let breweryExists = false;
     for (let i=0; i < localStorage.length; i++) {
@@ -192,5 +194,12 @@ var saveBrewery = (newBrewery) => {
         localStorage.setItem("savedBreweries" + localStorage.length, JSON.stringify(newBrewery));
     }
 }
+
+document.getElementById("clear-saved-brewery").onclick = clear_breweries;
+    function clear_breweries() {
+        localStorage.clear();
+        document.location.reload();
+    };
+
 cityFormEl.addEventListener("submit", formSubmitHandler);
 
