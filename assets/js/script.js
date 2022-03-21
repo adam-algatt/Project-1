@@ -45,7 +45,7 @@ var formSubmitHandler = function(event) {
 
 // function to fetch breweries via api
 var getBreweries = function(city) {
-    var apiUrl = "https://api.openbrewerydb.org/breweries?by_state=oregon&by_city=" + city + "&per_page=15";
+    var apiUrl = "https://api.openbrewerydb.org/breweries?by_state=oregon&by_city=" + city + "&per_page=8";
 
     // make request to url
     fetch(apiUrl)
