@@ -11,7 +11,7 @@ INSTALLATION
 
   github repository link :  https://github.com/adam-algatt/Project-1
   
-  website deployment link :  https://adam-algatt.github.io/Project-1/
+  website deployment link :  https://adam-algatt.githugitb.io/Project-1/
   
 -----------------------------------
 TECHNOLOGIES USED IN CREATION OF THIS APPLICATION
@@ -31,16 +31,19 @@ FUTURE PROJECT DEVELOPMENTS
   
 --------------------------------------
 ## Welcome to Oregon - Header
-- Select a city here.
+- Select a city you'd like to visit in Oregon.
 ![Welcome to Oregon](/assets/images/Header.jpg)
 
+## Five Day Foecast
+- After selecting the city, view the upcoming weather forecast for the next five days to plan your visit when the weather is nice!
+![5-Day Forecast](/assets/images/5Day_Forecast.jpg)
 
 ## Beers, Tides, Slopes
-- Breweries for the selected city appear (no city has been selected in screenshot).  User can save breweries they'd like to visit.  Links to ski and tide report.
+- Breweries for the selected city appear (no city has been selected in screenshot).  User can save breweries they'd like to try.  Links to ski and tide report are availabe too!
 ![Beers, Tides, Slopes](/assets/images/brew_ski_tides_no_brews.jpg)
 
 ## Beer Results
-- Breweries are shown for Astoria
+- Breweries are shown for Astoria.
 ![Beer Results](/assets/images/brew_ski_tides_with_brews.jpg)
 
 ## Brewery Information
