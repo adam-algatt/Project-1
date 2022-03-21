@@ -9,9 +9,9 @@ DESCRIPTION:
 -----------------------------------
 INSTALLATION
 
-  github repository link :  https://github.com/adam-algatt/Project-1
+  github repository link :  https://github.com/adam-algatt/Project-1/
   
-  website deployment link :  https://adam-algatt.githugitb.io/Project-1/
+  website deployment link :  https://adam-algatt.github.io/Project-1/
   
 -----------------------------------
 TECHNOLOGIES USED IN CREATION OF THIS APPLICATION
