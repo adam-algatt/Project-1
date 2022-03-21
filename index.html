@@ -62,17 +62,16 @@
                 </div>
             </form>
         </div>
-        <!--Weather Section Start-->
 
-        <div id="weather" class="col-s4 z-depth-2">
+        <!--Weather Section Start-->
+        <div id="weather" class="z-depth-2">
             <div class="col s12">
                 <h4 class="center-align">5 Day Weather Forecast</h4>
             </div>
 
-            <div id="forecast-div" class="card col s1 m2 l2">
+            <div id="hidden" class="hidden card col s1 m1 l2">
                 <div class="card-image">
-                    <img src="assets/img/hail.png" class="circle responsive-img z-depth-3" />
-
+                    <img id="weather-img-0" class="z-depth-3" />
                     <span id="forecast-title-0">Description</span>
                 </div>
                 <div class="card-content">
@@ -84,11 +83,9 @@
                 </div>
             </div>
 
-
-
-            <div id="forecast-div" class="card col s2">
+            <div id="hidden" class="card col s1 m1 l2">
                 <div class="card-image">
-                    <img src="assets/img/hail.png" height="200px" class="z-depth-3" />
+                    <img src="" id="weather-img-1" class="z-depth-3" />
                     <span id="forecast-title-1">Description</span>
                 </div>
                 <div class="card-content">
@@ -100,9 +97,9 @@
                 </div>
             </div>
 
-            <div id="forecast-div" class="card col s2">
+            <div id="hidden" class="card col s1 m1 l2">
                 <div class="card-image">
-                    <img src="assets/img/hail.png" height="200px" class="z-depth-3" />
+                    <img src="" id="weather-img-2" class="z-depth-3" />
                     <span id="forecast-title-2">Description</span>
                 </div>
                 <div class="card-content">
@@ -114,9 +111,9 @@
                 </div>
             </div>
 
-            <div id="forecast-div" class="card col s2">
+            <div id="hidden" class="card col s1 m1 l2">
                 <div class="card-image">
-                    <img src="assets/img/hail.png" height="200px" class="z-depth-3" />
+                    <img src="" id="weather-img-3" class="z-depth-3" />
                     <span id="forecast-title-3">Description</span>
                 </div>
                 <div class="card-content">
@@ -128,9 +125,9 @@
                 </div>
             </div>
 
-            <div id="forecast-div" class="card col s2">
+            <div id="hidden" class="card col s1 m1 l2">
                 <div class="card-image">
-                    <img src="assets/img/hail.png" height="200px" class="z-depth-3" />
+                    <img src="" id="weather-img-4" class="z-depth-3" />
                     <span id="forecast-title-4">Description</span>
                 </div>
                 <div class="card-content">
@@ -142,11 +139,9 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="col s1"></div>
+        </div>
 
-    </div>
-    <!--Weather Section End-->
+        <!--Weather Section End-->
     
     <div class="breweries col s4 center-align">
         <h5>Local Brews</h5>
@@ -180,7 +175,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script type="text/javascript" src="./assets/js/materialize.min.js"></script>
-    <script type="text/javascript" src="./assets/js/materialize.js"></script>
     <script type="text/javascript" src="./assets/js/script.js"></script>
     <script type="text/javascript" src="./assets/js/weather.js"></script>
 </body>
