@@ -1,67 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
 
     <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="./assets/css/materialize.min.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="./assets/css/materialize.min.css"  media="screen,projection"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
-    <link rel="stylesheet" href="./assets/css/style.css" />
-
+    <link rel="stylesheet" href="./assets/css/style.css"/> 
+    
     <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Discover Oregon</title>
 </head>
 
 <body>
     <div class="row">
         <div class="welcome col s12 center-align">
             <h1>Welcome to Oregon</h1>
-            <label id="city-box"class="form-label col s12 offset-s1" for="city">Select City</label>
-            <form id="city-form" class="card-body col s3">
-                <div class="select-wrapper white">
-                    <select name="city" class="select col s2" id="city">
-                        <option class="option cities" value="Ashland">Ashland</option>
-                        <option class="option cities" value="Astoria">Astoria</option>
-                        <option class="option cities" value="Beaverton">Beaverton</option>
-                        <option class="option cities" value="Bend">Bend</option>
-                        <option class="option cities" value="Brookings">Brookings</option>
-                        <option class="option" value="Burns">Burns</option>
-                        <option class="option" value="Cannon Beach">Cannon Beach</option>
-                        <option class="option" value="Coos Bay">Coos Bay</option>
-                        <option class="option" value="Corvallis">Corvallis</option>
-                        <option class="option" value="Eugene">Eugene</option>
-                        <option class="option" value="Florence">Florence</option>
-                        <option class="option" value="Forest Grove">Forest Grove</option>
-                        <option class="option" value="Grants Pass">Grants Pass</option>
-                        <option class="option" value="Gresham">Gresham</option>
-                        <option class="option" valyue="Hillsboro">Hillsboro</option>
-                        <option class="option" value="Hood River">Hood River</option>
-                        <option class="option" value="John Day">John Day</option>
-                        <option class="option" value="Klamath Falls">Klamath Falls</option>
-                        <option class="option" value="Lincoln City">Lincoln City</option>
-                        <option class="option" value="Medford">Medford</option>
-                        <option class="option" value="McMinnville">McMinnville</option>
-                        <option class="option" value="Newberg">Newberg</option>
-                        <option class="option" value="Newport">Newport</option>
-                        <option class="option" value="Pendleton">Pendleton</option>
-                        <option class="option" value="Portland">Portland</option>
-                        <option class="option" value="Roseburg">Roseburg</option>
-                        <option class="option" value="Salem">Salem</option>
-                        <option class="option" value="Seaside">Seaside</option>
-                        <option class="option" value="Sisters">Sisters</option>
-                        <option class="options" value="The Dalles">The Dalles</option>
-                        <option class="option" value="Tigard">Tigard</option>
-                        <option class="option" value="Tillamook">Tillamook</option>
-                        <option class="option" value="Tualatin">Tualatin</option>
-                    </select>
-                    <button id="submit" type="submit" class="btn col s2 offset-s10">Go</button>
-                </div>
+            <label class="form-label col s12 offset-s1 white-text" for="city">Select City</label>
+                <form id="city-form" class="card-body col s3">
+                    <div class="select-wrapper white">
+                            <select name="city" class="select col s2" id="city">
+                                <option class="option" value="Ashland">Ashland</option>
+                                <option class="option" value="Astoria">Astoria</option>
+                                <option class="option" value="Beaverton">Beaverton</option>
+                                <option class="option" value="Bend">Bend</option>
+                                <option class="option" value="Brookings">Brookings</option>  
+                                <option class="option" value="Burns">Burns</option>
+                                <option class="option" value="Cannon Beach">Cannon Beach</option>
+                                <option class="option" value="Coos Bay">Coos Bay</option>
+                                <option class="option" value="Corvallis">Corvallis</option>
+                                <option class="option" value="Eugene">Eugene</option>
+                                <option class="option" value="Florence">Florence</option>
+                                <option class="option" value="Forest Grove">Forest Grove</option>
+                                <option class="option" value="Grants Pass">Grants Pass</option>
+                                <option class="option" value="Gresham">Gresham</option>
+                                <option class="option" valyue="Hillsboro">Hillsboro</option>
+                                <option class="option" value="Hood River">Hood River</option>
+                                <option class="option" value="John Day">John Day</option>
+                                <option class="option" value="Klamath Falls">Klamath Falls</option>
+                                <option class="option" value="Lincoln City">Lincoln City</option>
+                                <option class="option" value="Medford">Medford</option>
+                                <option class="option" value="McMinnville">McMinnville</option>
+                                <option class="option" value="Newberg">Newberg</option>
+                                <option class="option" value="Newport">Newport</option>
+                                <option class="option" value="Pendleton">Pendleton</option>
+                                <option class="option" value="Portland">Portland</option>
+                                <option class="option" value="Roseburg">Roseburg</option>
+                                <option class="option" value="Salem">Salem</option>
+                                <option class="option" value="Seaside">Seaside</option>
+                                <option class="option" value="Sisters">Sisters</option>
+                                <option class="option" value="The Dalles">The Dalles</option>
+                                <option class="option" value="Tigard">Tigard</option>
+                                <option class="option" value="Tillamook">Tillamook</option>
+                                <option class="option" value="Tualatin">Tualatin</option>
+                            </select>
+                        <button id="submit" type="submit" class="btn col s2 offset-s10">Go</button> 
+                    </div>   
             </form>
-        </div>
+        </div> 
+    
+    <div class="row col-s12 m6 13">
 
         <!--Weather Section Start-->
         <div id="weather" class="z-depth-2">
@@ -143,32 +144,42 @@
 
         <!--Weather Section End-->
     
-    <div class="breweries col s4 center-align">
-        <h5>Local Brews</h5>
-        <div id="breweries-container" class="list-group"></div>
-    </div>
-    <div class="ski col s4 center-align">Ski Report</div>
-    <div class="tide col s4 center-align">Tide Report</div>
-    <div class="footer col s12 center-align">Reset Page</div>
-    </div>
-
-    <!-- Modal -->
-    <div class="modal fade" id="breweryFormModal">
-        <!--<div class="modal-dialog modal-dialog-centered" role="document"> -->
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="modal-title"></h5>
-                <ul id="brewery-info-container"></ul>
-                <!--m<button type="button" class="close" data-dismiss="modal" aria-label="Close"></button> -->
+    <!-- Brewery section begins-->
+    <div class="row">
+        <div class="breweries col s12 m6 l4 center-align">
+            <h5>Local Brews</h5>
+            <div id="breweries-container" class="list-group"></div>
+        </div> 
+        <div class="saved-breweries col s12 m6 l4 center-align">
+            <h5>Saved Breweries</h5>
+                <div class="col s12 center-align" id="saved-brewery-container"></div>
+                <div class="row">
+                    <button class="btn btn-clear grey lighten-1 black-text col s4 offset-s4 center-align" id="clear-saved-brewery">Clear Breweries</button> 
+                </div>   
             </div>
-
-            <div class="modal-body"></div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary modal-close" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save Brewery</button>
+        <!-- Brewery section ends-->
+            <div class="ski col s12 m12 l4 center-align">
+            <h5>Slope and Surf Reports</h5>
+                <button class="slope"><a href="https://www.onthesnow.com/oregon/skireport">Click to Get Ski Report</a></button>
+                <button class="surf"><a href="https://www.tides.net/oregon/">Click to Get Tide Report</a></button>
+        </div>  
+    </div>
+    
+    <!-- Local Brews Modal -->
+    <div class="modal fade" id="brewery-form-modal">
+        <!--<div class="modal-dialog modal-dialog-centered" role="document"> -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal-title"></h5>
+                        <ul id="brewery-info-container"></ul>
+                </div>
+                <div class="modal-body"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary modal-close" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Save Brewery</button>
+                </div>
             </div>
         </div>
-    </div>
     </div>
 
     <!--JavaScript at end of body for optimized loading-->
@@ -178,5 +189,4 @@
     <script type="text/javascript" src="./assets/js/script.js"></script>
     <script type="text/javascript" src="./assets/js/weather.js"></script>
 </body>
-
 </html>

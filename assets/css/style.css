@@ -1,14 +1,19 @@
 .welcome {
-    height: 320px;
+    max-height: fit-content; 
+    min-height: 320px;
     border: solid 2px black;
     background-color: lightskyblue;
     background-image: url("../images/Mt_Hood.jpg");
     background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     color: black;
     font-size: XX-large;
 }
 
+.row {
+    margin-bottom: 0px;
+}
 
 .form-label {
     color: black;
@@ -16,16 +21,21 @@
     text-align: left;
 }
 
+#submit {
+    min-width: fit-content;
+}
+
+
 /*Weather Section Styling Start*/
 #weather {
     min-height: fit-content;
     border: solid 2px black;
     background-color: lightgrey;
- display: flex;
- flex-wrap: wrap;
- row-gap: 15px;
- column-gap: 5px;
- justify-content: space-around;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 15px;
+    column-gap: 5px;
+    justify-content: space-around;
 
 }
 
@@ -38,14 +48,14 @@
     max-width: 300px;
     min-width: fit-content;
     border: 2px solid black;
-border-radius: 25px;
-flex: 1 1 0px; 
+    border-radius: 25px;
+    flex: 1 1 0px;
 }
 
 #forecast-div span {
     margin: 0 0 0 0;
-  font-size: x-large;
-  word-wrap: normal;
+    font-size: x-large;
+    word-wrap: normal;
 }
 
 .card .card-content ul {
@@ -55,12 +65,12 @@ flex: 1 1 0px;
 }
 
 #forecast-div img {
-  border-radius: 25px;
-  margin-top: 5px;
-  max-height: 100px;
-  max-width: 150px;
-  margin-left: auto;
-  margin-right: auto; 
+    border-radius: 25px;
+    margin-top: 5px;
+    max-height: 100px;
+    max-width: 150px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #forecast-div li {
@@ -76,16 +86,12 @@ flex: 1 1 0px;
 /*Weather Section Styling End*/
 
 
-.weather {
-    height: 660px;
-    border: solid 2px black;
-    background-color: lightgrey
-}
-
 .breweries {
-    height: 660px;
+    height: 350px;
     border: solid 2px black;
+    color: white;
     background-color: lightslategray;
+    background-image: url(../images/cheers.jpg);
 }
 
 .form-input {
@@ -93,28 +99,54 @@ flex: 1 1 0px;
     background-color: white;
 }
 
-.list-group {
-    list-style-type: none;
-    text-align: left;
-    display: block;
-}
-
-.list-group span {
-    display: block;
-}
-
 .ski {
-    height: 330px;
+    height: 350px;
     border: solid 2px black;
     background-color: lightslategray;
 }
 
-.tide {
-    height: 330px;
-    border: solid 2px black;
-    background-color: lightgreen;
+.surf {
+    min-height: 40%;
+    min-width: 55%;
+    font-size: x-large;
+    background-image: url(../images/aquarium-icon-16.jpg);
+    background-size: contain;
+    background-repeat: none;
 }
 
+.slope {
+
+    min-height: 40%;
+    min-width: 55%;
+    color: white;
+    font-size: x-large;
+    background-image: url(../images/skier.png);
+    background-size: contain;
+    background-repeat: none;
+}
+
+.slope a {
+    color: black;
+    font-weight: bolder;
+    background-color: white;
+}
+
+.surf a {
+    color: black;
+    font-weight: bolder;
+    background-color: white;
+}
+
+.saved-breweries {
+    height: 350px;
+    border: solid 2px black;
+    background-color: rgb(190, 228, 190);
+}
+
+.btn-clear {
+    margin: 12px 0px 12px 0px;
+    min-width: fit-content;
+}
 
 .reset {
     height: 130px;
