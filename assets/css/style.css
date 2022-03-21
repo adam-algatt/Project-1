@@ -45,7 +45,7 @@
     border: solid 2px black;
     background-color: white;
 }
-
+/* 
 .list-group {
     list-style-type: none;
     text-align: left;
@@ -54,7 +54,7 @@
 
 .list-group span {
     display: block;
-}
+} */
 
 .ski {
     height: 350px;
@@ -108,3 +108,17 @@
     border: solid 2px black;
     background-color: lightsteelblue;
 }
+
+@media screen and (max-width: 992px) {
+    .breweries {
+      display: flex;
+      flex-wrap: flex;
+    }
+  }
+  
+  /* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+    }
+  }
