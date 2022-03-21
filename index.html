@@ -36,8 +36,8 @@
                                 <option class="option" value="Florence">Florence</option>
                                 <option class="option" value="Forest Grove">Forest Grove</option>
                                 <option class="option" value="Grants Pass">Grants Pass</option>
-                                <option class="option" value="Grehsam">Gresham</option>
-                                <option class="option" valyue="Hillsobro">Hillsboro</option>
+                                <option class="option" value="Gresham">Gresham</option>
+                                <option class="option" valyue="Hillsboro">Hillsboro</option>
                                 <option class="option" value="Hood River">Hood River</option>
                                 <option class="option" value="John Day">John Day</option>
                                 <option class="option" value="Klamath Falls">Klamath Falls</option>
@@ -57,94 +57,92 @@
                                 <option class="option" value="Tillamook">Tillamook</option>
                                 <option class="option" value="Tualatin">Tualatin</option>
                             </select>
-                        <button type="submit" class="btn col s2 offset-s10">Go</button> 
+                        <button type="submit" class="btn col s2 offset-s10" id="submit">Go</button> 
                     </div>   
             </form>
         </div> 
     
     <div class="row col-s12 m6 13">
+
         <!--Weather Section Start-->
-        <div class="weather col s12">    
-            <div class="col s12">
-                <h4 class="center-align">5 Day Weather Forecast</h4>
+            <div id="weather" class="z-depth-2">
+                <div class="col s12">
+                    <h4 class="center-align">5 Day Weather Forecast</h4>
+                </div>
+    
+                <div id="hidden" class="hidden card col s1 m1 l2">
+                    <div class="card-image">
+                        <img id="weather-img-0" class="z-depth-3" />
+                        <span id="forecast-title-0">Description</span>
+                    </div>
+                    <div class="card-content">
+                        <ul id="forecast-0">
+                            <li id="temp-0">temp</li>
+                            <li id="humidity-0">humidity</li>
+                            <li id="wind-0">wind</li>
+                        </ul>
+                    </div>
+                </div>
+    
+                <div id="hidden" class="card col s1 m1 l2">
+                    <div class="card-image">
+                        <img src="" id="weather-img-1" class="z-depth-3" />
+                        <span id="forecast-title-1">Description</span>
+                    </div>
+                    <div class="card-content">
+                        <ul id="forecast-1">
+                            <li id="temp-1">temp</li>
+                            <li id="humidity-1">humidity</li>
+                            <li id="wind-1">wind</li>
+                        </ul>
+                    </div>
+                </div>
+    
+                <div id="hidden" class="card col s1 m1 l2">
+                    <div class="card-image">
+                        <img src="" id="weather-img-2" class="z-depth-3" />
+                        <span id="forecast-title-2">Description</span>
+                    </div>
+                    <div class="card-content">
+                        <ul id="forecast-2">
+                            <li id="temp-2">temp</li>
+                            <li id="humidity-2">humidity</li>
+                            <li id="wind-2">wind</li>
+                        </ul>
+                    </div>
+                </div>
+    
+                <div id="hidden" class="card col s1 m1 l2">
+                    <div class="card-image">
+                        <img src="" id="weather-img-3" class="z-depth-3" />
+                        <span id="forecast-title-3">Description</span>
+                    </div>
+                    <div class="card-content">
+                        <ul id="forecast-3">
+                            <li id="temp-3">temp</li>
+                            <li id="humidity-3">humidity</li>
+                            <li id="wind-3">wind</li>
+                        </ul>
+                    </div>
+                </div>
+    
+                <div id="hidden" class="card col s1 m1 l2">
+                    <div class="card-image">
+                        <img src="" id="weather-img-4" class="z-depth-3" />
+                        <span id="forecast-title-4">Description</span>
+                    </div>
+                    <div class="card-content">
+                        <ul id="forecast-4">
+                            <li id="temp-4">temp</li>
+                            <li id="humidity-4">humidity</li>
+                            <li id="wind-4">wind</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-
-            <div class="forecast-container" id="weather">
-                    <div id="forecast-div" class="card col s2">
-                        <div class="card-image">
-                            <img src="assets/img/hail.png" height="200px" class="z-depth-3" />
-        
-                            <span id="forecast-title-0">Description</span>
-                        </div>
-                        <div class="card-content">
-                            <ul id="forecast-0">
-                                <li id="temp-0">temp</li>
-                                <li id="humidity-0">humidity</li>
-                                <li id="wind-0">wind</li>
-                            </ul>
-                        </div>
-                    </div>
-        
-                    <div id="forecast-div" class="card col s2">
-                        <div class="card-image">
-                            <img src="assets/img/hail.png" height="200px" class="z-depth-3" />
-                            <span id="forecast-title-1">Description</span>
-                        </div>
-                        <div class="card-content">
-                            <ul id="forecast-1">
-                                <li id="temp-1">temp</li>
-                                <li id="humidity-1">humidity</li>
-                                <li id="wind-1">wind</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div id="forecast-div" class="card col s2">
-                        <div class="card-image">
-                            <img src="assets/img/hail.png" height="200px" class="z-depth-3" />
-                            <span id="forecast-title-2">Description</span>
-                        </div>
-                        <div class="card-content">
-                            <ul id="forecast-2">
-                                <li id="temp-2">temp</li>
-                                <li id="humidity-2">humidity</li>
-                                <li id="wind-2">wind</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div id="forecast-div" class="card col s2">
-                        <div class="card-image">
-                            <img src="assets/img/hail.png" height="200px" class="z-depth-3" />
-                            <span id="forecast-title-3">Description</span>
-                        </div>
-                        <div class="card-content">
-                            <ul id="forecast-3">
-                                <li id="temp-3">temp</li>
-                                <li id="humidity-3">humidity</li>
-                                <li id="wind-3">wind</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div id="forecast-div" class="card col s2">
-                        <div class="card-image">
-                            <img src="assets/img/hail.png" height="200px" class="z-depth-3" />
-                            <span id="forecast-title-4">Description</span>
-                        </div>
-                        <div class="card-content">
-                            <ul id="forecast-4">
-                                <li id="temp-4">temp</li>
-                                <li id="humidity-4">humidity</li>
-                                <li id="wind-4">wind</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>    
-            </div>
-        </div>
-    </div>         
-<!--Weather Section End-->
+    </div>
+    
+    <!--Weather Section End-->
     
     <!-- Brewery section begins-->
     <div class="row">
@@ -188,8 +186,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script type="text/javascript" src="./assets/js/materialize.min.js"></script>
-    <script type="text/javascript" src="./assets/js/materialize.js"></script>  
     <script type="text/javascript" src="./assets/js/script.js"></script>
-
+    <script type="text/javascript" src="./assets/js/weather.js"></script>
+   
+    
 </body>
 </html>
