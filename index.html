@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Welcome to Oregon</title>
 
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="./assets/css/materialize.min.css"  media="screen,projection"/>
@@ -18,7 +18,7 @@
 <body>
     <div class="row">
         <div class="welcome col s12 center-align">
-            <h1>Welcome to Oregon</h1>
+            <h1>Discover Oregon</h1>
             <label class="form-label col s12 offset-s1" for="city">Select City</label>
                 <form id="city-form" class="card-body col s3">
                     <div class="select-wrapper white">
@@ -66,10 +66,15 @@
             <h5>Local Brews</h5>
             <div id="breweries-container" class="list-group"></div>
         </div> 
-        <div class="ski col s4 center-align">Ski Report</div>
-        <div class="tide col s4 center-align">Tide Report</div>
-        <div class="footer col s12 center-align">Reset Page</div>
-    </div>
+        
+                <div class="ski col s4 center-align"> <a href="https://www.onthesnow.com/oregon/skireport">Click to Get Ski Report</a></div>
+                    
+                
+                <div class="tide col s4 center-align"><a href="https://www.tides.net/oregon/">Click to Get Tide Report</a></div>
+                     
+        </div>
+        <!-- <div class="footer col s12 center-align">Reset Page</div> -->
+
     
     <!-- Modal -->
     <div class="modal fade" id="breweryFormModal">
@@ -98,4 +103,7 @@
     <script type="text/javascript" src="./assets/js/script.js"></script>
 
 </body>
+    <footer>
+        <button class="button" id="reset page">Reset Page</button>
+    </footer>
 </html>
